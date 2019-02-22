@@ -1,0 +1,11 @@
+# directories
+/.idea
+/target
+/test-output
+
+# files
+*.iml
+*.jar
+*.log
+*.orig
+*.rej
