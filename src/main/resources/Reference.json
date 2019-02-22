@@ -1,0 +1,44 @@
+{
+  "object": {
+    "id": 1
+  },
+  "null": null,
+  "number": 0,
+  "bigInteger": 2147483648,
+  "long": 9223372036854776000,
+  "integer": 2147483647,
+  "short": 32767,
+  "bigDecimal": 1.7976931348623157e+308,
+  "double": 1.7976931348623157e+308,
+  "float": 3.4028235e+38,
+  "string": "string",
+  "char": "c",
+  "boolean": true,
+  "byte": 127,
+  "objectsArray": [
+    {
+      "number": 0
+    },
+    {
+      "string": "string"
+    }
+  ],
+  "arraysArray": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "primitivesArray": [
+    0,
+    1
+  ],
+  "nullsArray": [
+    null,
+    null
+  ]
+}
