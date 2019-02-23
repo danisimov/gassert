@@ -3,7 +3,7 @@ package unit;
 import org.testng.annotations.Test;
 import system.Gassert;
 
-public class Json extends Base{
+public class Json extends Base {
 
     @Test
     public void testJsonObject() {
