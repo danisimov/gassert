@@ -7,6 +7,7 @@
     <groupId>org.gassert</groupId>
     <artifactId>gassert</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
 
     <name>gassert</name>
     <description>Lib is up to help you with gson assertions.</description>
