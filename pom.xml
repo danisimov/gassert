@@ -8,6 +8,30 @@
     <artifactId>gassert</artifactId>
     <version>1.0</version>
 
+    <name>gassert</name>
+    <description>Lib is up to help you with gson assertions.</description>
+    <url>https://github.com/danisimov/gassert</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Dmitrii Anisimov</name>
+            <email>danisimovq@icloud.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/danisimov/gassert.git</connection>
+        <developerConnection>scm:git:ssh://github.com/danisimov/gassert.git</developerConnection>
+        <url>https://github.com/danisimov/gassert/tree/master</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
