@@ -6,7 +6,7 @@
 
     <groupId>org.gassert</groupId>
     <artifactId>gassert</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>gassert</name>

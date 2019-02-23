@@ -3,7 +3,7 @@ package system;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MessageBuilder {
+class MessageBuilder {
 
     private MessageBuilder() {
     }

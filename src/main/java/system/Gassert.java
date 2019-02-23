@@ -116,10 +116,20 @@ public class Gassert {
                 MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
+    public static void verifyJsonObject(JsonObject json, String key, int size) {
+        verifyJsonObject(json, key);
+        Assert.assertEquals(json.getAsJsonObject(key).size(), size, Const.SIZE_VERIFICATION_FAILED_MESSAGE);
+    }
+
     public static void verifyJsonArray(JsonObject json, String key) {
         Assert.assertTrue(json.has(key), MessageBuilder.buildMessage(Const.CONTAINS_VERIFICATION_FAILED_MESSAGE, key));
         Assert.assertTrue(json.get(key).isJsonArray(),
                 MessageBuilder.buildMessage(Const.ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    public static void verifyJsonArray(JsonObject json, String key, int size) {
+        verifyJsonArray(json, key);
+        Assert.assertEquals(json.getAsJsonArray(key).size(), size, Const.SIZE_VERIFICATION_FAILED_MESSAGE);
     }
 
     public static void verifyJsonPrimitive(JsonObject json, String key) {
@@ -134,31 +144,27 @@ public class Gassert {
                 MessageBuilder.buildMessage(Const.NULL_TYPE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
-    public static void verifyJsonObjectsInJsonArray(JsonArray array, String key) {
+    public static void verifyJsonObjectsInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
-            Assert.assertTrue(json.isJsonObject(),
-                    MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+            Assert.assertTrue(json.isJsonObject(), Const.ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE);
         }
     }
 
-    public static void verifyJsonArraysInJsonArray(JsonArray array, String key) {
+    public static void verifyJsonArraysInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
-            Assert.assertTrue(json.isJsonArray(),
-                    MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+            Assert.assertTrue(json.isJsonArray(), Const.ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE);
         }
     }
 
-    public static void verifyJsonPrimitivesInJsonArray(JsonArray array, String key) {
+    public static void verifyJsonPrimitivesInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
-            Assert.assertTrue(json.isJsonPrimitive(),
-                    MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+            Assert.assertTrue(json.isJsonPrimitive(), Const.ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE);
         }
     }
 
-    public static void verifyJsonNullsInJsonArray(JsonArray array, String key) {
+    public static void verifyJsonNullsInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
-            Assert.assertTrue(json.isJsonNull(),
-                    MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+            Assert.assertTrue(json.isJsonNull(), Const.ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE);
         }
     }
 }
