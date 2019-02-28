@@ -118,7 +118,8 @@ public class Gassert {
 
     public static void verifyJsonObject(JsonObject json, String key, int size) {
         verifyJsonObject(json, key);
-        Assert.assertEquals(json.getAsJsonObject(key).size(), size, Const.SIZE_VERIFICATION_FAILED_MESSAGE);
+        Assert.assertEquals(json.getAsJsonObject(key).size(), size,
+                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
     public static void verifyJsonArray(JsonObject json, String key) {
@@ -129,7 +130,8 @@ public class Gassert {
 
     public static void verifyJsonArray(JsonObject json, String key, int size) {
         verifyJsonArray(json, key);
-        Assert.assertEquals(json.getAsJsonArray(key).size(), size, Const.SIZE_VERIFICATION_FAILED_MESSAGE);
+        Assert.assertEquals(json.getAsJsonArray(key).size(), size,
+                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
     public static void verifyJsonPrimitive(JsonObject json, String key) {
