@@ -3,7 +3,7 @@ package unit;
 import org.testng.annotations.Test;
 import system.Gassert;
 
-public class Elements extends Base {
+public class PrimitivesTests extends TestCore {
 
     @Test
     public void testNumber() {
@@ -23,6 +23,11 @@ public class Elements extends Base {
     @Test
     public void testInteger() {
         Gassert.verifyInteger(json, "integer", json.get("integer").getAsInt());
+    }
+
+    @Test
+    public void testIntegerWithMessage() {
+        Gassert.verifyInteger(json, "integer", json.get("integer").getAsInt(), "Test failed!");
     }
 
     @Test
@@ -51,17 +56,27 @@ public class Elements extends Base {
     }
 
     @Test
+    public void testBoolean() {
+        Gassert.verifyBoolean(json, "boolean", json.get("boolean").getAsBoolean());
+    }
+
+    @Test
+    public void testBooleanWithMessage() {
+        Gassert.verifyBoolean(json, "boolean", json.get("boolean").getAsBoolean(), "Test failed!");
+    }
+
+    @Test
     public void testString() {
         Gassert.verifyString(json, "string", json.get("string").getAsString());
     }
 
     @Test
-    public void testChar() {
-        Gassert.verifyChar(json, "char", json.get("char").getAsCharacter());
+    public void testStringWithMessage() {
+        Gassert.verifyString(json, "string", json.get("string").getAsString(), "Test failed!");
     }
 
     @Test
-    public void testBoolean() {
-        Gassert.verifyBoolean(json, "boolean", json.get("boolean").getAsBoolean());
+    public void testStringContains() {
+        Gassert.verifyStringContains(json, "string", "string");
     }
 }

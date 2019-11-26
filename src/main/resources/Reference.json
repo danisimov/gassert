@@ -11,8 +11,7 @@
   "bigDecimal": 1.7976931348623157e+308,
   "double": 1.7976931348623157e+308,
   "float": 3.4028235e+38,
-  "string": "string",
-  "char": "c",
+  "string": "stringValue",
   "boolean": true,
   "byte": 127,
   "objectsArray": [
@@ -20,7 +19,7 @@
       "number": 0
     },
     {
-      "string": "string"
+      "string": "stringValue"
     }
   ],
   "arraysArray": [

@@ -1,7 +1,6 @@
 package system;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.testng.internal.collections.Pair;
 
 class MessageBuilder {
 
@@ -9,12 +8,10 @@ class MessageBuilder {
     }
 
     static String buildMessage(String template, String substitution) {
-        Matcher matcher = Pattern.compile("\\$x").matcher(template);
-        StringBuffer sb = new StringBuffer();
-        while (matcher.find()) {
-            matcher.appendReplacement(sb, substitution);
-        }
-        matcher.appendTail(sb);
-        return sb.toString();
+        return template.replace(Const.X, substitution);
+    }
+
+    static String buildMessage(String template, Pair<String, String> substitutions) {
+        return template.replace(Const.X, substitutions.first()).replace(Const.Z, substitutions.second());
     }
 }
