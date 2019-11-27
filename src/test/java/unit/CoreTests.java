@@ -11,6 +11,11 @@ public class CoreTests extends TestCore {
     }
 
     @Test
+    public void testJsonObjectWithMessage() {
+        Gassert.verifyJsonObject(json, "object", "Test failed!");
+    }
+
+    @Test
     public void testJsonObjectSize() {
         Gassert.verifyJsonObject(json, "object", 1);
     }
@@ -23,6 +28,21 @@ public class CoreTests extends TestCore {
     @Test
     public void testJsonObjectWithValueAndMessage() {
         Gassert.verifyJsonObject(json, "object", json.getAsJsonObject("object"), "Test failed!");
+    }
+
+    @Test
+    public void testJsonArray() {
+        Gassert.verifyJsonArray(json, "primitivesArray");
+    }
+
+    @Test
+    public void testJsonArrayWithMessage() {
+        Gassert.verifyJsonArray(json, "primitivesArray", "Test failed!");
+    }
+
+    @Test
+    public void testJsonArraySize() {
+        Gassert.verifyJsonArray(json, "primitivesArray", 2);
     }
 
     @Test
@@ -39,6 +59,11 @@ public class CoreTests extends TestCore {
     @Test
     public void testJsonPrimitive() {
         Gassert.verifyJsonPrimitive(json, "number");
+    }
+
+    @Test
+    public void testJsonPrimitiveWithMessage() {
+        Gassert.verifyJsonPrimitive(json, "number", "Test failed!");
     }
 
     @Test
@@ -64,5 +89,10 @@ public class CoreTests extends TestCore {
     @Test
     public void testJsonElement() {
         Gassert.verifyJsonElement(json, "null");
+    }
+
+    @Test
+    public void testJsonElementWithMessage() {
+        Gassert.verifyJsonElement(json, "null", "Test failed!");
     }
 }

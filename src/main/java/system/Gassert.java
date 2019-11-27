@@ -22,6 +22,12 @@ public class Gassert {
                 MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
+    public static void verifyJsonObject(JsonObject json, String key, String message) {
+        verifyJsonElement(json, key);
+        Assert.assertTrue(json.get(key).isJsonObject(),
+                MessageBuilder.buildMessage(Const.OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
     public static void verifyJsonObject(JsonObject json, String key, int size) {
         verifyJsonObject(json, key);
         Assert.assertEquals(json.getAsJsonObject(key).size(), size,
@@ -40,6 +46,24 @@ public class Gassert {
                 MessageBuilder.buildMessage(Const.VALUE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
     }
 
+    public static void verifyJsonArray(JsonObject json, String key) {
+        verifyJsonElement(json, key);
+        Assert.assertTrue(json.get(key).isJsonArray(),
+                MessageBuilder.buildMessage(Const.ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    public static void verifyJsonArray(JsonObject json, String key, String message) {
+        verifyJsonElement(json, key);
+        Assert.assertTrue(json.get(key).isJsonArray(),
+                MessageBuilder.buildMessage(Const.ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    public static void verifyJsonArray(JsonObject json, String key, int size) {
+        verifyJsonArray(json, key);
+        Assert.assertEquals(json.getAsJsonArray(key).size(), size,
+                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
     public static void verifyJsonArray(JsonObject json, String key, JsonArray value) {
         verifyJsonArray(json, key);
         Assert.assertEquals(json.get(key).getAsJsonArray(), value,
@@ -53,6 +77,12 @@ public class Gassert {
     }
 
     public static void verifyJsonPrimitive(JsonObject json, String key) {
+        verifyJsonElement(json, key);
+        Assert.assertTrue(json.get(key).isJsonPrimitive(),
+                MessageBuilder.buildMessage(Const.PRIMITIVE_TYPE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    public static void verifyJsonPrimitive(JsonObject json, String key, String message) {
         verifyJsonElement(json, key);
         Assert.assertTrue(json.get(key).isJsonPrimitive(),
                 MessageBuilder.buildMessage(Const.PRIMITIVE_TYPE_VERIFICATION_FAILED_MESSAGE, key));
@@ -83,6 +113,10 @@ public class Gassert {
     }
 
     public static void verifyJsonElement(JsonObject json, String key) {
+        Assert.assertTrue(json.has(key), MessageBuilder.buildMessage(Const.CONTAINS_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    public static void verifyJsonElement(JsonObject json, String key, String message) {
         Assert.assertTrue(json.has(key), MessageBuilder.buildMessage(Const.CONTAINS_VERIFICATION_FAILED_MESSAGE, key));
     }
 
@@ -179,18 +213,6 @@ public class Gassert {
     }
 
     //----------------------------------------------array----------------------------------------------//
-    public static void verifyJsonArray(JsonObject json, String key) {
-        verifyJsonElement(json, key);
-        Assert.assertTrue(json.get(key).isJsonArray(),
-                MessageBuilder.buildMessage(Const.ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE, key));
-    }
-
-    public static void verifyJsonArray(JsonObject json, String key, int size) {
-        verifyJsonArray(json, key);
-        Assert.assertEquals(json.getAsJsonArray(key).size(), size,
-                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
-    }
-
     public static void verifyJsonObjectsInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
             Assert.assertTrue(json.isJsonObject(), Const.ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE);
