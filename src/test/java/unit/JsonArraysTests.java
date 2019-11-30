@@ -3,10 +3,37 @@ package unit;
 import org.testng.annotations.Test;
 import system.Gassert;
 
-public class ArraysTests extends TestCore {
+public class JsonArraysTests extends Core {
+
+    @Test
+    public void testJsonArraySize() {
+        Gassert.verifyJsonArray(json, "primitivesArray", 2);
+    }
+
+    @Test
+    public void testJsonArraySizeWithMessage() {
+        Gassert.verifyJsonArray(json, "primitivesArray", 2, "Test failed!");
+    }
+
+    @Test
+    public void testJsonArrayWithValue() {
+        Gassert.verifyJsonArray(json, "primitivesArray", json.getAsJsonArray("primitivesArray"));
+    }
+
+    @Test
+    public void testJsonArrayWithValueAndMessage() {
+        Gassert.verifyJsonArray(json, "primitivesArray", json.getAsJsonArray("primitivesArray"),
+                "Test failed!");
+    }
+
     @Test
     public void testJsonObjectsInJsonArray() {
         Gassert.verifyJsonObjectsInJsonArray(json.getAsJsonArray("objectsArray"));
+    }
+
+    @Test
+    public void testJsonObjectsInJsonArrayWithMessag() {
+        Gassert.verifyJsonObjectsInJsonArray(json.getAsJsonArray("objectsArray"), "Test failed!");
     }
 
     @Test

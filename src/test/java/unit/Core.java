@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
 
-public class TestCore {
+public class Core {
     static JsonObject json;
 
     @BeforeSuite

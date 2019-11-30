@@ -3,7 +3,7 @@ package unit;
 import org.testng.annotations.Test;
 import system.Gassert;
 
-public class CoreTests extends TestCore {
+public class JsonElementsTests extends Core {
 
     @Test
     public void testJsonObject() {
@@ -16,21 +16,6 @@ public class CoreTests extends TestCore {
     }
 
     @Test
-    public void testJsonObjectSize() {
-        Gassert.verifyJsonObject(json, "object", 1);
-    }
-
-    @Test
-    public void testJsonObjectWithValue() {
-        Gassert.verifyJsonObject(json, "object", json.getAsJsonObject("object"));
-    }
-
-    @Test
-    public void testJsonObjectWithValueAndMessage() {
-        Gassert.verifyJsonObject(json, "object", json.getAsJsonObject("object"), "Test failed!");
-    }
-
-    @Test
     public void testJsonArray() {
         Gassert.verifyJsonArray(json, "primitivesArray");
     }
@@ -38,22 +23,6 @@ public class CoreTests extends TestCore {
     @Test
     public void testJsonArrayWithMessage() {
         Gassert.verifyJsonArray(json, "primitivesArray", "Test failed!");
-    }
-
-    @Test
-    public void testJsonArraySize() {
-        Gassert.verifyJsonArray(json, "primitivesArray", 2);
-    }
-
-    @Test
-    public void testJsonArrayWithValue() {
-        Gassert.verifyJsonArray(json, "primitivesArray", json.getAsJsonArray("primitivesArray"));
-    }
-
-    @Test
-    public void testJsonArrayWithValueAndMessage() {
-        Gassert.verifyJsonArray(json, "primitivesArray", json.getAsJsonArray("primitivesArray"),
-                "Test failed!");
     }
 
     @Test

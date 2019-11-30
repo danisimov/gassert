@@ -3,7 +3,7 @@ package unit;
 import org.testng.annotations.Test;
 import system.Gassert;
 
-public class PrimitivesTests extends TestCore {
+public class JsonPrimitivesTests extends Core {
 
     @Test
     public void testNumber() {
