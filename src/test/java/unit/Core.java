@@ -18,7 +18,7 @@ public class Core {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
             File file = new File(Objects.requireNonNull(classLoader.getResource("Reference.json")).getFile());
-            JsonElement jsonElement = new JsonParser().parse(new FileReader(file));
+            JsonElement jsonElement = JsonParser.parseReader(new FileReader(file));
             json = jsonElement.getAsJsonObject();
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
