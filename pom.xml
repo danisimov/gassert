@@ -6,7 +6,7 @@
 
     <groupId>com.github.danisimov</groupId>
     <artifactId>gassert</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
     <packaging>jar</packaging>
 
     <name>gassert</name>
@@ -95,6 +95,7 @@
                 <version>3.1.1</version>
                 <configuration>
                     <additionalOptions>-html5</additionalOptions>
+                    <destDir>../../../apidocs</destDir>
                 </configuration>
                 <executions>
                     <execution>

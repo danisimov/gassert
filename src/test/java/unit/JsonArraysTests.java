@@ -6,13 +6,35 @@ import system.Gassert;
 public class JsonArraysTests extends Core {
 
     @Test
-    public void testJsonArraySize() {
-        Gassert.verifyJsonArray(json, "primitivesArray", 2);
+    public void testJsonArray() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"));
     }
 
     @Test
-    public void testJsonArraySizeWithMessage() {
-        Gassert.verifyJsonArray(json, "primitivesArray", 2, "Test failed!");
+    public void testJsonArrayWithMessage() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"), "Test failed!");
+    }
+
+    @Test
+    public void testJsonArrayAgainstJsonArray() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"),
+                json.getAsJsonArray("objectsArray"));
+    }
+
+    @Test
+    public void testJsonArrayAgainstJsonArrayWithMessage() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"),
+                json.getAsJsonArray("objectsArray"),"Test failed!");
+    }
+
+    @Test
+    public void testJsonArrayByKey() {
+        Gassert.verifyJsonArray(json, "primitivesArray");
+    }
+
+    @Test
+    public void testJsonArrayByKeyWithMessage() {
+        Gassert.verifyJsonArray(json, "primitivesArray", "Test failed!");
     }
 
     @Test
@@ -24,6 +46,16 @@ public class JsonArraysTests extends Core {
     public void testJsonArrayWithValueAndMessage() {
         Gassert.verifyJsonArray(json, "primitivesArray", json.getAsJsonArray("primitivesArray"),
                 "Test failed!");
+    }
+
+    @Test
+    public void testJsonArraySize() {
+        Gassert.verifyJsonArray(json, "primitivesArray", 2);
+    }
+
+    @Test
+    public void testJsonArraySizeWithMessage() {
+        Gassert.verifyJsonArray(json, "primitivesArray", 2, "Test failed!");
     }
 
     @Test
@@ -55,6 +87,16 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
+    public void testJsonArraysInJsonArray() {
+        Gassert.verifyJsonArraysInJsonArray(json.getAsJsonArray("arraysArray"));
+    }
+
+    @Test
+    public void testJsonArraysInJsonArrayWithMessage() {
+        Gassert.verifyJsonArraysInJsonArray(json.getAsJsonArray("arraysArray"), "Test failed!");
+    }
+
+    @Test
     public void testJsonArrayInJsonArray() {
         Gassert.verifyJsonArrayInJsonArray(json.getAsJsonArray("arraysArray"),
                 json.getAsJsonArray("arraysArray").get(0).getAsJsonArray());
@@ -70,6 +112,16 @@ public class JsonArraysTests extends Core {
     public void testJsonArrayInJsonArrayByIndexWithKey() {
         Gassert.verifyJsonArrayInJsonArray(json.getAsJsonArray("arraysArray"),
                 json.getAsJsonArray("arraysArray").get(0).getAsJsonArray(), 0, "Test failed!");
+    }
+
+    @Test
+    public void testJsonPrimitivesInJsonArray() {
+        Gassert.verifyJsonPrimitivesInJsonArray(json.getAsJsonArray("primitivesArray"));
+    }
+
+    @Test
+    public void testJsonPrimitivesInJsonArrayWithMessage() {
+        Gassert.verifyJsonPrimitivesInJsonArray(json.getAsJsonArray("primitivesArray"), "Test failed!");
     }
 
     @Test
@@ -91,13 +143,8 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
-    public void testJsonArraysInJsonArray() {
-        Gassert.verifyJsonArraysInJsonArray(json.getAsJsonArray("arraysArray"));
-    }
-
-    @Test
-    public void testJsonPrimitivesInJsonArray() {
-        Gassert.verifyJsonPrimitivesInJsonArray(json.getAsJsonArray("primitivesArray"));
+    public void testJsonNullsInJsonArray() {
+        Gassert.verifyJsonNullsInJsonArray(json.getAsJsonArray("nullsArray"));
     }
 
     @Test
@@ -108,10 +155,5 @@ public class JsonArraysTests extends Core {
     @Test
     public void testJsonNullsInJsonArrayByIndexWithMessage() {
         Gassert.verifyJsonNullInJsonArray(json.getAsJsonArray("nullsArray"), 0, "Test failed!");
-    }
-
-    @Test
-    public void testJsonNullsInJsonArray() {
-        Gassert.verifyJsonNullsInJsonArray(json.getAsJsonArray("nullsArray"));
     }
 }

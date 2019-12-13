@@ -2,6 +2,9 @@ package system;
 
 import org.testng.internal.collections.Pair;
 
+/**
+ * Error messages builder.
+ */
 class MessageBuilder {
 
     private MessageBuilder() {
