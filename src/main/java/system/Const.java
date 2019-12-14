@@ -5,16 +5,15 @@ package system;
  */
 class Const {
 
-    static final String CONTAINS_VERIFICATION_FAILED_MESSAGE = "Json does not contains key: [$x].";
+    static final String CONTAINS_VERIFICATION_FAILED_MESSAGE = "Json does not contains element: [$x].";
 
-    static final String INNER_ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a JsonArray.";
-    static final String ARRAY_TYPE_VERIFICATION_FAILED_MESSAGE = "Element is not a JsonArray.";
-    static final String INNER_NULL_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a JsonNull.";
-    static final String NULL_TYPE_VERIFICATION_FAILED_MESSAGE = "Element is not a JsonNull.";
-    static final String INNER_OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a JsonObject.";
-    static final String OBJECT_TYPE_VERIFICATION_FAILED_MESSAGE = "Element is not a JsonObject.";
-    static final String INNER_PRIMITIVE_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a JsonPrimitive.";
-    static final String PRIMITIVE_TYPE_VERIFICATION_FAILED_MESSAGE = "Element is not a JsonPrimitive.";
+    static final String JSON_OBJECT_TYPE = "JsonObject";
+    static final String JSON_ARRAY_TYPE = "JsonArray";
+    static final String JSON_PRIMITIVE_TYPE = "JsonPrimitive";
+    static final String JSON_NULL_TYPE = "JsonNull";
+
+    static final String INNER_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a [$z].";
+    static final String TYPE_VERIFICATION_FAILED_MESSAGE = "Element is not a [$x].";
     static final String INNER_VALUE_VERIFICATION_FAILED_MESSAGE = "Element [$x] verification failed.";
     static final String VALUE_VERIFICATION_FAILED_MESSAGE = "Element verification failed.";
     static final String STRING_CONTAINS_VERIFICATION_FAILED_MESSAGE = "Element [$x] does not contains [$z].";

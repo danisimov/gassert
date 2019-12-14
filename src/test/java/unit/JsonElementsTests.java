@@ -7,7 +7,7 @@ public class JsonElementsTests extends Core {
 
     @Test
     public void testJsonElement() {
-        Gassert.verifyJsonElement(json, "nul1l");
+        Gassert.verifyJsonElement(json, "null");
     }
 
     @Test
