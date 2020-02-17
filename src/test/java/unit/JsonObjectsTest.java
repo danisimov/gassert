@@ -49,4 +49,9 @@ public class JsonObjectsTest extends Core {
     public void testJsonObjectSize() {
         Gassert.verifyJsonObject(json, "object", 1);
     }
+
+    @Test
+    public void testJsonObjectSizeWithMessage() {
+        Gassert.verifyJsonObject(json, "object", 1, "Test failed!");
+    }
 }

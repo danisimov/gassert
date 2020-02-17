@@ -121,4 +121,9 @@ public class JsonPrimitivesTests extends Core {
     public void testStringContains() {
         Gassert.verifyStringContains(json, "string", "string");
     }
+
+    @Test
+    public void testStringContainsWithMessage() {
+        Gassert.verifyStringContains(json, "string", "string", "Test failed!");
+    }
 }

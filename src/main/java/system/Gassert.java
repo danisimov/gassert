@@ -182,6 +182,19 @@ public class Gassert {
                 MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
+    /**
+     * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
+     * @param json testable JsonObject
+     * @param key expected JsonObject key value
+     * @param size expected JsonObject size
+     * @param message custom error message
+     */
+    public static void verifyJsonObject(JsonObject json, String key, int size, String message) {
+        verifyJsonObject(json, key);
+        Assert.assertEquals(json.getAsJsonObject(key).size(), size,
+                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
+    }
+
     //----------------------------------------------JsonPrimitive----------------------------------------------//
     /**
      * Verify that JsonElement is JsonPrimitive.
@@ -428,6 +441,20 @@ public class Gassert {
         Assert.assertTrue(json.get(key).getAsString().contains(value),
                 MessageBuilder.buildMessage(Const.STRING_CONTAINS_VERIFICATION_FAILED_MESSAGE,
                         new Pair<>(key, value)));
+    }
+
+    /**
+     * Verify that JsonObject contains JsonPrimitive found by key, and it's value contains specific String.
+     * @param json testable JsonObject
+     * @param key expected JsonObject key value
+     * @param value expected contained String value
+     * @param message custom error message
+     */
+    public static void verifyStringContains(JsonObject json, String key, String value, String message) {
+        verifyJsonPrimitive(json, key);
+        Assert.assertTrue(json.get(key).getAsString().contains(value),
+                MessageBuilder.buildMessage(Const.STRING_CONTAINS_VERIFICATION_FAILED_MESSAGE,
+                        new Pair<>(key, value)) + "\n" + message);
     }
 
     /**
