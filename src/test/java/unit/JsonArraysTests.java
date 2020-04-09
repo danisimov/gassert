@@ -16,6 +16,16 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
+    public void testJsonArraySize() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"), 2);
+    }
+
+    @Test
+    public void testJsonArraySizeWithMessage() {
+        Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"), 2, "Test failed!");
+    }
+
+    @Test
     public void testJsonArrayAgainstJsonArray() {
         Gassert.verifyJsonArray(json.getAsJsonArray("objectsArray"),
                 json.getAsJsonArray("objectsArray"));
@@ -49,12 +59,12 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
-    public void testJsonArraySize() {
+    public void testJsonArraySizeByKey() {
         Gassert.verifyJsonArray(json, "primitivesArray", 2);
     }
 
     @Test
-    public void testJsonArraySizeWithMessage() {
+    public void testJsonArraySizeByKeyWithMessage() {
         Gassert.verifyJsonArray(json, "primitivesArray", 2, "Test failed!");
     }
 

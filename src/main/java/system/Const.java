@@ -17,7 +17,8 @@ class Const {
     static final String INNER_VALUE_VERIFICATION_FAILED_MESSAGE = "Element [$x] verification failed.";
     static final String VALUE_VERIFICATION_FAILED_MESSAGE = "Element verification failed.";
     static final String STRING_CONTAINS_VERIFICATION_FAILED_MESSAGE = "Element [$x] does not contains [$z].";
-    static final String SIZE_VERIFICATION_FAILED_MESSAGE = "Element [$x] size verification failed.";
+    static final String BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE = "Element [$x] size verification failed.";
+    static final String SIZE_VERIFICATION_FAILED_MESSAGE = "Element size verification failed.";
 
     static final String ARRAY_CONTENT_TYPES_VERIFICATION_FAILED_MESSAGE = "JsonArray contains unexpected types.";
     static final String ARRAY_CONTENT_VERIFICATION_FAILED_MESSAGE = "JsonArray does not contains expected value.";

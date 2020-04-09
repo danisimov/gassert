@@ -179,7 +179,7 @@ public class Gassert {
     public static void verifyJsonObject(JsonObject json, String key, int size) {
         verifyJsonObject(json, key);
         Assert.assertEquals(json.getAsJsonObject(key).size(), size,
-                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
+                MessageBuilder.buildMessage(Const.BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
     /**
@@ -192,7 +192,7 @@ public class Gassert {
     public static void verifyJsonObject(JsonObject json, String key, int size, String message) {
         verifyJsonObject(json, key);
         Assert.assertEquals(json.getAsJsonObject(key).size(), size,
-                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
+                MessageBuilder.buildMessage(Const.BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
     }
 
     //----------------------------------------------JsonPrimitive----------------------------------------------//
@@ -502,6 +502,28 @@ public class Gassert {
     }
 
     /**
+     * Verify that JsonElement is JsonArray.
+     * @param element testable JsonElement
+     * @param size expected JsonObject size
+     */
+    public static void verifyJsonArray(JsonElement element, int size) {
+        verifyJsonArray(element);
+        Assert.assertEquals(element.getAsJsonArray().size(), size, Const.SIZE_VERIFICATION_FAILED_MESSAGE);
+    }
+
+    /**
+     * Verify that JsonElement is JsonArray.
+     * @param element testable JsonElement
+     * @param size expected JsonObject size
+     * @param message custom error message
+     */
+    public static void verifyJsonArray(JsonElement element, int size, String message) {
+        verifyJsonArray(element);
+        Assert.assertEquals(element.getAsJsonArray().size(), size,
+                Const.SIZE_VERIFICATION_FAILED_MESSAGE + "\n" + message);
+    }
+
+    /**
      * Verify that JsonElement value equals to specific JsonArray.
      * @param element testable JsonElement
      * @param value expected JsonArray value
@@ -580,7 +602,7 @@ public class Gassert {
     public static void verifyJsonArray(JsonObject json, String key, int size) {
         verifyJsonArray(json, key);
         Assert.assertEquals(json.getAsJsonArray(key).size(), size,
-                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key));
+                MessageBuilder.buildMessage(Const.BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE, key));
     }
 
     /**
@@ -593,7 +615,7 @@ public class Gassert {
     public static void verifyJsonArray(JsonObject json, String key, int size, String message) {
         verifyJsonArray(json, key, message);
         Assert.assertEquals(json.getAsJsonArray(key).size(), size,
-                MessageBuilder.buildMessage(Const.SIZE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
+                MessageBuilder.buildMessage(Const.BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE, key) + "\n" + message);
     }
 
     /**
