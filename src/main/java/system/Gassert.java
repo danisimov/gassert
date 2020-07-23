@@ -775,6 +775,24 @@ public class Gassert {
     }
 
     /**
+     * Verify that JsonArray contains specific JsonPrimitive.
+     * @param array testable JsonArray
+     * @param value expected JsonPrimitive value
+     * @param message custom error message
+     */
+    public static void verifyJsonPrimitiveInJsonArray(JsonArray array, JsonPrimitive value, String message) {
+        for (JsonElement json : array) {
+            try {
+                verifyJsonPrimitive(json, value, message);
+                return;
+            } catch (AssertionError ignored) {
+                // ignored
+            }
+        }
+        throw new AssertionError(Const.ARRAY_CONTENT_VERIFICATION_FAILED_MESSAGE);
+    }
+
+    /**
      * Verify that JsonArray contains specific JsonPrimitive on specific index.
      * @param array testable JsonArray
      * @param value expected JsonPrimitive value

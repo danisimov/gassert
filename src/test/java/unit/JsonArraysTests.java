@@ -141,13 +141,19 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
+    public void testJsonPrimitiveInJsonArrayWithMessage() {
+        Gassert.verifyJsonPrimitiveInJsonArray(json.getAsJsonArray("primitivesArray"),
+                json.getAsJsonArray("primitivesArray").get(0).getAsJsonPrimitive(), "Test failed!");
+    }
+
+    @Test
     public void testJsonPrimitiveInJsonArrayByIndex() {
         Gassert.verifyJsonPrimitiveInJsonArray(json.getAsJsonArray("primitivesArray"),
                 json.getAsJsonArray("primitivesArray").get(0).getAsJsonPrimitive(), 0);
     }
 
     @Test
-    public void testJsonPrimitiveInJsonArrayByIndexWithKey() {
+    public void testJsonPrimitiveInJsonArrayByIndexWithMessage() {
         Gassert.verifyJsonPrimitiveInJsonArray(json.getAsJsonArray("primitivesArray"),
                 json.getAsJsonArray("primitivesArray").get(0).getAsJsonPrimitive(), 0, "Test failed!");
     }
