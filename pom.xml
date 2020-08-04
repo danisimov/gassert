@@ -6,7 +6,7 @@
 
     <groupId>com.github.danisimov</groupId>
     <artifactId>gassert</artifactId>
-    <version>1.0.20</version>
+    <version>1.0.21</version>
     <packaging>jar</packaging>
 
     <name>gassert</name>
@@ -142,7 +142,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.1.0</version>
+            <version>7.3.0</version>
         </dependency>
     </dependencies>
 </project>
