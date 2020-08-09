@@ -394,6 +394,19 @@ public class Gassert {
     }
 
     /**
+     * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to int int.
+     * @param json testable JsonObject
+     * @param key expected JsonObject key value
+     * @param value expected int value
+     * @param message custom error message
+     */
+    public static void verifyDouble(JsonObject json, String key, double value, String message) {
+        verifyJsonPrimitive(json, key, message);
+        Assert.assertEquals(json.get(key).getAsDouble(), value,
+                MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
+    }
+
+    /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific float.
      * @param json testable JsonObject
      * @param key expected JsonObject key value

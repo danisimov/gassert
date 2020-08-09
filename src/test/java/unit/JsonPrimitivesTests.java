@@ -93,6 +93,11 @@ public class JsonPrimitivesTests extends Core {
     }
 
     @Test
+    public void testDoubleWithMessage() {
+        Gassert.verifyDouble(json, "double", json.get("double").getAsDouble(), "Test failed!");
+    }
+
+    @Test
     public void testFloat() {
         Gassert.verifyFloat(json, "float", json.get("float").getAsFloat());
     }
