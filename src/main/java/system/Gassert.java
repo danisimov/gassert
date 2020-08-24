@@ -325,6 +325,7 @@ public class Gassert {
      * @param json testable JsonObject
      * @param key expected JsonObject key value
      * @param value expected long value
+     * @param message custom error message
      */
     public static void verifyLong(JsonObject json, String key, long value, String message) {
         verifyJsonPrimitive(json, key);
