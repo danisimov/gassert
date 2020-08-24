@@ -63,6 +63,11 @@ public class JsonPrimitivesTests extends Core {
     }
 
     @Test
+    public void testLongWithMessage() {
+        Gassert.verifyLong(json, "long", json.get("long").getAsLong(), "Test failed!");
+    }
+
+    @Test
     public void testInteger() {
         Gassert.verifyInteger(json, "integer", json.get("integer").getAsInt());
     }
