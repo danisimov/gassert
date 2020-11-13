@@ -93,6 +93,11 @@ public class JsonPrimitivesTests extends Core {
     }
 
     @Test
+    public void testBigDecimalWithMessage() {
+        Gassert.verifyBigDecimal(json, "bigDecimal", json.get("bigDecimal").getAsBigDecimal(), "Test failed!");
+    }
+
+    @Test
     public void testDouble() {
         Gassert.verifyDouble(json, "double", json.get("double").getAsDouble());
     }

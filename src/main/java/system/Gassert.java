@@ -395,6 +395,19 @@ public class Gassert {
     }
 
     /**
+     * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific BigDecimal.
+     * @param json testable JsonObject
+     * @param key expected JsonObject key value
+     * @param value expected BigDecimal value
+     * @param message custom error message
+     */
+    public static void verifyBigDecimal(JsonObject json, String key, BigDecimal value, String message) {
+        verifyJsonPrimitive(json, key);
+        Assert.assertEquals(json.get(key).getAsBigDecimal(), value,
+                MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
+    }
+
+    /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific double.
      * @param json testable JsonObject
      * @param key expected JsonObject key value
