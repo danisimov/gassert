@@ -21,7 +21,7 @@ public class Gassert {
     //----------------------------------------------JsonElement----------------------------------------------//
     /**
      * Verify that JsonObject contains JsonElement found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonElement key value
      */
     public static void verifyJsonElement(JsonObject json, String key) {
@@ -30,7 +30,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonElement found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonElement key value
      * @param message custom error message
      */
@@ -41,7 +41,7 @@ public class Gassert {
     //----------------------------------------------JsonNull----------------------------------------------//
     /**
      * Verify that JsonElement is JsonNull.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      */
     public static void verifyJsonNull(JsonElement element) {
         Assert.assertTrue(element.isJsonNull(), MessageBuilder.buildMessage(element, Const.TYPE_VERIFICATION_FAILED_MESSAGE, Const.JSON_NULL_TYPE));
@@ -49,7 +49,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonNull.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param message custom error message
      */
     public static void verifyJsonNull(JsonElement element, String message) {
@@ -59,7 +59,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonNull found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonNull key value
      */
     public static void verifyJsonNull(JsonObject json, String key) {
@@ -70,7 +70,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonNull found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonNull key value
      * @param message custom error message
      */
@@ -83,7 +83,7 @@ public class Gassert {
     //----------------------------------------------JsonObject----------------------------------------------//
     /**
      * Verify that JsonElement is JsonObject.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      */
     public static void verifyJsonObject(JsonElement element) {
         Assert.assertTrue(element.isJsonObject(), MessageBuilder.buildMessage(element, Const.TYPE_VERIFICATION_FAILED_MESSAGE, Const.JSON_OBJECT_TYPE));
@@ -91,7 +91,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonObject.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param message custom error message
      */
     public static void verifyJsonObject(JsonElement element, String message) {
@@ -101,7 +101,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonObject.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonObject value
      */
     public static void verifyJsonObject(JsonElement element, JsonObject value) {
@@ -112,7 +112,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonObject.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonObject value
      * @param message custom error message
      */
@@ -124,7 +124,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      */
     public static void verifyJsonObject(JsonObject json, String key) {
@@ -135,7 +135,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param message custom error message
      */
@@ -147,7 +147,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonObject value
      */
@@ -159,7 +159,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonObject value
      * @param message custom error message
@@ -172,7 +172,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
      */
@@ -184,7 +184,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
      * @param message custom error message
@@ -198,7 +198,7 @@ public class Gassert {
     //----------------------------------------------JsonPrimitive----------------------------------------------//
     /**
      * Verify that JsonElement is JsonPrimitive.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      */
     public static void verifyJsonPrimitive(JsonElement element) {
         Assert.assertTrue(element.isJsonPrimitive(), MessageBuilder.buildMessage(element, Const.TYPE_VERIFICATION_FAILED_MESSAGE, Const.JSON_PRIMITIVE_TYPE));
@@ -206,7 +206,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonPrimitive.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param message custom error message
      */
     public static void verifyJsonPrimitive(JsonElement element, String message) {
@@ -216,7 +216,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonPrimitive.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonPrimitive value
      */
     public static void verifyJsonPrimitive(JsonElement element, JsonPrimitive value) {
@@ -226,7 +226,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonPrimitive.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonPrimitive value
      * @param message custom error message
      */
@@ -238,7 +238,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      */
     public static void verifyJsonPrimitive(JsonObject json, String key) {
@@ -249,7 +249,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param message custom error message
      */
@@ -261,7 +261,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific JsonPrimitive.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonPrimitive value
      */
@@ -273,7 +273,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific JsonPrimitive.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonPrimitive value
      * @param message custom error message
@@ -286,7 +286,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific Number.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected Number value
      */
@@ -298,7 +298,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific BigInteger.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected BigInteger value
      */
@@ -310,7 +310,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific long.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected long value
      */
@@ -322,7 +322,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific long.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected long value
      * @param message custom error message
@@ -335,32 +335,40 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific int.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected int value
      */
     public static void verifyInteger(JsonObject json, String key, int value) {
         verifyJsonPrimitive(json, key);
-        Assert.assertEquals(json.get(key).getAsInt(), value,
-                MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key));
+        try {
+            Assert.assertEquals(json.get(key).getAsInt(), value,
+                    MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key));
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException(MessageBuilder.buildMessage(json, Const.INNER_TYPE_VERIFICATION_FAILED_MESSAGE, new Pair<>(key, Const.JSON_NUMBER)));
+        }
     }
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to int int.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected int value
      * @param message custom error message
      */
     public static void verifyInteger(JsonObject json, String key, int value, String message) {
         verifyJsonPrimitive(json, key, message);
+        try {
         Assert.assertEquals(json.get(key).getAsInt(), value,
                 MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException(MessageBuilder.buildMessage(json, Const.INNER_TYPE_VERIFICATION_FAILED_MESSAGE, new Pair<>(key, Const.JSON_NUMBER) + message));
+        }
     }
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific short.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected short value
      */
@@ -372,7 +380,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific byte.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected byte value
      */
@@ -384,7 +392,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific BigDecimal.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected BigDecimal value
      */
@@ -396,7 +404,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific BigDecimal.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected BigDecimal value
      * @param message custom error message
@@ -409,7 +417,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific double.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected double value
      */
@@ -421,7 +429,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to int int.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected int value
      * @param message custom error message
@@ -434,7 +442,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific float.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected float value
      */
@@ -446,7 +454,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific String.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected String value
      */
@@ -458,7 +466,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific String.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected String value
      * @param message custom error message
@@ -471,7 +479,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value contains specific String.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected contained String value
      */
@@ -484,7 +492,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value contains specific String.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected contained String value
      * @param message custom error message
@@ -498,7 +506,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific boolean.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected boolean value
      */
@@ -510,7 +518,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonPrimitive found by key, and it's value equals to specific boolean.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected boolean value
      * @param message custom error message
@@ -524,7 +532,7 @@ public class Gassert {
     //----------------------------------------------JsonArray----------------------------------------------//
     /**
      * Verify that JsonElement is JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      */
     public static void verifyJsonArray(JsonElement element) {
         Assert.assertTrue(element.isJsonArray(), MessageBuilder.buildMessage(element, Const.TYPE_VERIFICATION_FAILED_MESSAGE, Const.JSON_ARRAY_TYPE));
@@ -532,7 +540,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param message custom error message
      */
     public static void verifyJsonArray(JsonElement element, String message) {
@@ -542,7 +550,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param size expected JsonObject size
      */
     public static void verifyJsonArray(JsonElement element, int size) {
@@ -552,7 +560,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement is JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param size expected JsonObject size
      * @param message custom error message
      */
@@ -564,7 +572,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonArray value
      */
     public static void verifyJsonArray(JsonElement element, JsonArray value) {
@@ -574,7 +582,7 @@ public class Gassert {
 
     /**
      * Verify that JsonElement value equals to specific JsonArray.
-     * @param element testable JsonElement
+     * @param element verifiable JsonElement
      * @param value expected JsonArray value
      * @param message custom error message
      */
@@ -586,7 +594,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      */
     public static void verifyJsonArray(JsonObject json, String key) {
@@ -597,7 +605,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param message custom error message
      */
@@ -609,7 +617,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key, and it's value equals to specific JsonArray.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonArray value
      */
@@ -621,7 +629,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key, and it's value equals to specific JsonArray.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonArray value
      * @param message custom error message
@@ -634,7 +642,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key and it's size.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
      */
@@ -646,7 +654,7 @@ public class Gassert {
 
     /**
      * Verify that JsonObject contains JsonArray found by key and it's size.
-     * @param json testable JsonObject
+     * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
      * @param message custom error message
@@ -659,7 +667,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonObject type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      */
     public static void verifyJsonObjectsInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
@@ -669,7 +677,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonObject type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param message custom error message
      */
     public static void verifyJsonObjectsInJsonArray(JsonArray array, String message) {
@@ -680,7 +688,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonObject.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonObject value
      */
     public static void verifyJsonObjectInJsonArray(JsonArray array, JsonObject value) {
@@ -697,7 +705,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonObject on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonObject value
      * @param index expected JsonObject index
      */
@@ -707,7 +715,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonObject on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonObject value
      * @param index expected JsonObject index
      * @param message custom error message
@@ -718,7 +726,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonArray type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      */
     public static void verifyJsonArraysInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
@@ -728,7 +736,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonArray type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param message custom error message
      */
     public static void verifyJsonArraysInJsonArray(JsonArray array, String message) {
@@ -739,7 +747,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonArray.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonArray value
      */
     public static void verifyJsonArrayInJsonArray(JsonArray array, JsonArray value) {
@@ -756,7 +764,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonArray on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonArray value
      * @param index expected JsonArray index
      */
@@ -766,7 +774,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonArray on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonArray value
      * @param index expected JsonArray index
      * @param message custom error message
@@ -777,7 +785,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonArray type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      */
     public static void verifyJsonPrimitivesInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
@@ -787,7 +795,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonArray type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param message custom error message
      */
     public static void verifyJsonPrimitivesInJsonArray(JsonArray array, String message) {
@@ -798,7 +806,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonPrimitive.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonPrimitive value
      */
     public static void verifyJsonPrimitiveInJsonArray(JsonArray array, JsonPrimitive value) {
@@ -815,7 +823,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonPrimitive.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonPrimitive value
      * @param message custom error message
      */
@@ -833,7 +841,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonPrimitive on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonPrimitive value
      * @param index expected JsonPrimitive index
      */
@@ -843,7 +851,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonPrimitive on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param value expected JsonPrimitive value
      * @param index expected JsonPrimitive index
      * @param message custom error message
@@ -854,7 +862,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains only JsonNull type elements.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      */
     public static void verifyJsonNullsInJsonArray(JsonArray array) {
         for (JsonElement json : array) {
@@ -864,7 +872,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonNull on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param index expected JsonNull index
      */
     public static void verifyJsonNullInJsonArray(JsonArray array, int index) {
@@ -873,7 +881,7 @@ public class Gassert {
 
     /**
      * Verify that JsonArray contains specific JsonNull on specific index.
-     * @param array testable JsonArray
+     * @param array verifiable JsonArray
      * @param index expected JsonNull index
      * @param message custom error message
      */

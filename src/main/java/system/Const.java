@@ -9,6 +9,9 @@ class Const {
     static final String JSON_ARRAY_TYPE = "JsonArray";
     static final String JSON_PRIMITIVE_TYPE = "JsonPrimitive";
     static final String JSON_NULL_TYPE = "JsonNull";
+    static final String JSON_STRING = "JsonString";
+    static final String JSON_NUMBER = "JsonNumber";
+    static final String JSON_BOOLEAN = "JsonBoolean";
 
     static final String CONTAINS_VERIFICATION_FAILED_MESSAGE = "Json does not contains element: [$x].";
     static final String INNER_TYPE_VERIFICATION_FAILED_MESSAGE = "Element [$x] is not a [$z].";
