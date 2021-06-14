@@ -190,7 +190,7 @@ public class Gassert {
      * @param message custom error message
      */
     public static void verifyJsonObject(JsonObject json, String key, int size, String message) {
-        verifyJsonObject(json, key);
+        verifyJsonObject(json, key, message);
         Assert.assertEquals(json.getAsJsonObject(key).size(), size,
                 MessageBuilder.buildMessage(json, Const.BY_KEY_SIZE_VERIFICATION_FAILED_MESSAGE, key) + message);
     }
@@ -328,7 +328,7 @@ public class Gassert {
      * @param message custom error message
      */
     public static void verifyLong(JsonObject json, String key, long value, String message) {
-        verifyJsonPrimitive(json, key);
+        verifyJsonPrimitive(json, key, message);
         Assert.assertEquals(json.get(key).getAsLong(), value,
                 MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
     }
@@ -410,7 +410,7 @@ public class Gassert {
      * @param message custom error message
      */
     public static void verifyBigDecimal(JsonObject json, String key, BigDecimal value, String message) {
-        verifyJsonPrimitive(json, key);
+        verifyJsonPrimitive(json, key, message);
         Assert.assertEquals(json.get(key).getAsBigDecimal(), value,
                 MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
     }
@@ -498,7 +498,7 @@ public class Gassert {
      * @param message custom error message
      */
     public static void verifyStringContains(JsonObject json, String key, String value, String message) {
-        verifyJsonPrimitive(json, key);
+        verifyJsonPrimitive(json, key, message);
         Assert.assertTrue(json.get(key).getAsString().contains(value),
                 MessageBuilder.buildMessage(json, Const.STRING_CONTAINS_VERIFICATION_FAILED_MESSAGE,
                         new Pair<>(key, value)) + message);
@@ -565,7 +565,7 @@ public class Gassert {
      * @param message custom error message
      */
     public static void verifyJsonArray(JsonElement element, int size, String message) {
-        verifyJsonArray(element);
+        verifyJsonArray(element, message);
         Assert.assertEquals(element.getAsJsonArray().size(), size,
                 MessageBuilder.buildMessage(element, Const.SIZE_VERIFICATION_FAILED_MESSAGE) + message);
     }
@@ -836,7 +836,7 @@ public class Gassert {
                 // ignored
             }
         }
-        throw new AssertionError(MessageBuilder.buildMessage(array, Const.ARRAY_CONTENT_VERIFICATION_FAILED_MESSAGE));
+        throw new AssertionError(MessageBuilder.buildMessage(array, Const.ARRAY_CONTENT_VERIFICATION_FAILED_MESSAGE) + message);
     }
 
     /**
