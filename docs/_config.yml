@@ -1,2 +1,5 @@
 theme: jekyll-theme-midnight
 title: Gassert
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
