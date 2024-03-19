@@ -38,6 +38,31 @@ public class Gassert {
         Assert.assertTrue(json.has(key), MessageBuilder.buildMessage(json,Const.CONTAINS_VERIFICATION_FAILED_MESSAGE, key) + message);
     }
 
+    /**
+     * Verify that JsonObject contains JsonElement found by key, and it's value equals to specific JsonElement.
+     * @param json verifiable JsonObject
+     * @param key expected JsonElement key value
+     * @param value expected JsonElement value
+     */
+    public static void verifyJsonElement(JsonObject json, String key, JsonElement value) {
+        verifyJsonElement(json, key);
+        Assert.assertEquals(json.get(key), value,
+                MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key));
+    }
+
+    /**
+     * Verify that JsonObject contains JsonElement found by key, and it's value equals to specific JsonElement.
+     * @param json verifiable JsonObject
+     * @param key expected JsonElement key value
+     * @param value expected JsonElement value
+     * @param message custom error message
+     */
+    public static void verifyJsonElement(JsonObject json, String key, JsonElement value, String message) {
+        verifyJsonElement(json, key, message);
+        Assert.assertEquals(json.get(key), value,
+                MessageBuilder.buildMessage(json, Const.INNER_VALUE_VERIFICATION_FAILED_MESSAGE, key) + message);
+    }
+
     //----------------------------------------------JsonNull----------------------------------------------//
     /**
      * Verify that JsonElement is JsonNull.
@@ -146,7 +171,7 @@ public class Gassert {
     }
 
     /**
-     * Verify that JsonObject contains JsonObject found by key.
+     * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
      * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param value expected JsonObject value
@@ -171,7 +196,7 @@ public class Gassert {
     }
 
     /**
-     * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
+     * Verify that JsonObject contains JsonObject found by key, and it's size equals to expected.
      * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
@@ -183,7 +208,7 @@ public class Gassert {
     }
 
     /**
-     * Verify that JsonObject contains JsonObject found by key, and it's value equals to specific JsonObject.
+     * Verify that JsonObject contains JsonObject found by key, and it's size equals to expected.
      * @param json verifiable JsonObject
      * @param key expected JsonObject key value
      * @param size expected JsonObject size
