@@ -16,6 +16,16 @@ public class JsonObjectsTest extends Core {
     }
 
     @Test
+    public void testJsonObjectSize() {
+        Gassert.verifyJsonObject(json.get("object"), 1);
+    }
+
+    @Test
+    public void testJsonObjectSizeWithMessage() {
+        Gassert.verifyJsonObject(json.get("object"), 1, "Test Failed!");
+    }
+
+    @Test
     public void testJsonObjectAgainstJsonObject() {
         Gassert.verifyJsonObject(json, json);
     }
@@ -46,12 +56,12 @@ public class JsonObjectsTest extends Core {
     }
 
     @Test
-    public void testJsonObjectSize() {
+    public void testJsonObjectByKeySize() {
         Gassert.verifyJsonObject(json, "object", 1);
     }
 
     @Test
-    public void testJsonObjectSizeWithMessage() {
+    public void testJsonObjectByKeySizeWithMessage() {
         Gassert.verifyJsonObject(json, "object", 1, "Test failed!");
     }
 }

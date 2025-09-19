@@ -59,12 +59,12 @@ public class JsonArraysTests extends Core {
     }
 
     @Test
-    public void testJsonArraySizeByKey() {
+    public void testJsonArrayByKeySize() {
         Gassert.verifyJsonArray(json, "primitivesArray", 2);
     }
 
     @Test
-    public void testJsonArraySizeByKeyWithMessage() {
+    public void testJsonArrayByKeySizeWithMessage() {
         Gassert.verifyJsonArray(json, "primitivesArray", 2, "Test failed!");
     }
 
